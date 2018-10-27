@@ -1,0 +1,60 @@
+{
+  "name": "typescript-nodejs-app",
+  "version": "1.0.0",
+  "description": "typescript nodejs app",
+  "main": "dist/index.js",
+  "repository": "https://github.com/shotor/typescript-nodejs-app.git",
+  "homepage": "https://github.com/shotor/typescript-nodejs-app/",
+  "author": "shotor",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "app": "./dist/index.js"
+  },
+  "scripts": {
+    "start": "yarn build && yarn dist",
+    "start:prod": "yarn build:prod && yarn dist",
+    "start:dist": "node dist/index.js",
+    "build": "rm -rf dist && mkdir dist && ./node_modules/.bin/tsc",
+    "build:prod": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/tsc",
+    "build:watch": "./node_modules/.bin/tsc --watch",
+    "test": "jest --env=node --colors --coverage",
+    "test:watch": "jest --env=node --colors --coverage --watch",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "prettier:fix": "prettier --write \"{,!(node_modules|dist|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
+    "prettier:staged": "pretty-quick --staged",
+    "pre-commit": "yarn lint:fix && yarn prettier:staged && yarn build && yarn test && git add .",
+    "commit": "git-cz"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.7",
+    "@types/node": "^10.12.0",
+    "commitizen": "^3.0.4",
+    "cz-conventional-changelog": "2.1.0",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0",
+    "ts-jest": "^23.10.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.3"
+  }
+}
