@@ -1,14 +1,13 @@
-# TypeScript NodeJS App
+# TypeScript Module Template
 
-[![dependencies Status](https://david-dm.org/shotor/typescript-nodejs-app/status.svg)](https://david-dm.org/shotor/typescript-nodejs-app) [![devDependencies Status](https://david-dm.org/shotor/typescript-nodejs-app/dev-status.svg)](https://david-dm.org/shotor/typescript-nodejs-app?type=dev)
-
-Starter kit including:
+[![dependencies Status](https://david-dm.org/shotor/typescript-module-template/status.svg)](https://david-dm.org/shotor/typescript-module-template) [![devDependencies Status](https://david-dm.org/shotor/typescript-module-template/dev-status.svg)](https://david-dm.org/shotor/typescript-module-template?type=dev)
 
 - TypeScript
 - Jest
-- TSLint
+- ESlint
 - Prettier
-- Pre-commit hook
+- Husky
+- Lint-staged
 - VSCode debug configurations
 - Commitizen
 

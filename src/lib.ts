@@ -1,1 +1,6 @@
-export const foo = 5
+/**
+ * lib.ts
+ * Import example
+ */
+
+export const FOO = 5

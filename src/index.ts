@@ -3,10 +3,10 @@
  * Entry point of the application
  */
 
-import { foo } from './lib'
-
-main()
+import { FOO } from './lib'
 
 function main() {
-  return foo
+  return FOO
 }
+
+main()
